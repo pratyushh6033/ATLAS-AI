@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Integrations - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#00ff88;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:#00ff88;
+}
+
+/* TITLE */
+.title{
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+/* STATUS */
+.status{
+  font-size:12px;
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:6px;
+  margin-bottom:10px;
+}
+
+.connected{
+  background:#00ff88;
+  color:#000;
+}
+
+.disconnected{
+  background:#333;
+}
+
+/* BUTTON */
+button{
+  margin-top:10px;
+  padding:8px 10px;
+  border:none;
+  border-radius:6px;
+  background:#00ff88;
+  color:black;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* SYNC BAR */
+.bar{
+  height:8px;
+  background:#222;
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.fill{
+  height:100%;
+  width:70%;
+  background:linear-gradient(90deg,#00ff88,#00f2fe);
+}
+
+/* LOG */
+.log{
+  font-size:12px;
+  margin-top:8px;
+  opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🔌 Atlas AI Integration Hub (Ecosystem Control Panel)
+</div>
+
+<div class="grid">
+
+<!-- OPENAI -->
+<div class="card">
+<div class="title">🤖 OpenAI API</div>
+<div class="status connected">CONNECTED</div>
+
+<p>AI model sync enabled</p>
+
+<div class="bar"><div class="fill"></div></div>
+
+<div class="log">Last sync: 2 sec ago</div>
+
+<button onclick="toggle(this)">Disconnect</button>
+</div>
+
+<!-- GOOGLE -->
+<div class="card">
+<div class="title">🌐 Google Services</div>
+<div class="status connected">CONNECTED</div>
+
+<p>Search + Maps + Analytics</p>
+
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+
+<div class="log">Last sync: 12 sec ago</div>
+
+<button onclick="toggle(this)">Disconnect</button>
+</div>
+
+<!-- DATABASE -->
+<div class="card">
+<div class="title">🗄 Database Cluster</div>
+<div class="status connected">CONNECTED</div>
+
+<p>Real-time data storage active</p>
+
+<div class="bar"><div class="fill" style="width:95%"></div></div>
+
+<div class="log">Latency: 18ms</div>
+
+<button onclick="toggle(this)">Disconnect</button>
+</div>
+
+<!-- PAYMENT -->
+<div class="card">
+<div class="title">💳 Stripe Payments</div>
+<div class="status disconnected">DISCONNECTED</div>
+
+<p>Billing system inactive</p>
+
+<div class="bar"><div class="fill" style="width:30%"></div></div>
+
+<div class="log">Not synced</div>
+
+<button onclick="toggle(this)">Connect</button>
+</div>
+
+<!-- STORAGE -->
+<div class="card">
+<div class="title">☁ Cloud Storage</div>
+<div class="status connected">CONNECTED</div>
+
+<p>File + model storage active</p>
+
+<div class="bar"><div class="fill" style="width:78%"></div></div>
+
+<div class="log">Sync stable</div>
+
+<button onclick="toggle(this)">Disconnect</button>
+</div>
+
+<!-- ANALYTICS -->
+<div class="card">
+<div class="title">📊 Analytics Engine</div>
+<div class="status connected">CONNECTED</div>
+
+<p>User behavior tracking active</p>
+
+<div class="bar"><div class="fill" style="width:88%"></div></div>
+
+<div class="log">Streaming data...</div>
+
+<button onclick="toggle(this)">Disconnect</button>
+</div>
+
+</div>
+
+<script>
+
+function toggle(btn){
+let card = btn.parentElement;
+let status = card.querySelector(".status");
+
+if(status.classList.contains("connected")){
+status.classList.remove("connected");
+status.classList.add("disconnected");
+status.innerText = "DISCONNECTED";
+btn.innerText = "Connect";
+}else{
+status.classList.remove("disconnected");
+status.classList.add("connected");
+status.innerText = "CONNECTED";
+btn.innerText = "Disconnect";
+}
+}
+
+</script>
+
+</body>
+</html>

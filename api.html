@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Hub - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#00f2fe;
+}
+
+/* LAYOUT */
+.container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* INPUTS */
+input, textarea, select{
+  width:100%;
+  padding:10px;
+  margin-top:8px;
+  background:#0b0b0b;
+  border:none;
+  color:white;
+  border-radius:6px;
+}
+
+/* BUTTON */
+button{
+  margin-top:10px;
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  background:#00f2fe;
+  color:black;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* RESPONSE BOX */
+.response{
+  background:#0b0b0b;
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+  height:200px;
+  overflow:auto;
+  font-family:monospace;
+  font-size:12px;
+}
+
+/* LOG */
+.log{
+  font-size:12px;
+  margin:6px 0;
+  padding:6px;
+  border-left:2px solid #00ff88;
+  background:#0f0f0f;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🌐 Atlas AI API Control Center (Developer Console)
+</div>
+
+<div class="container">
+
+<!-- API TESTER -->
+<div class="card">
+
+<h3>🧪 API Request Tester</h3>
+
+<select id="endpoint">
+<option>/ai/generate</option>
+<option>/analytics/summary</option>
+<option>/user/data</option>
+<option>/system/status</option>
+</select>
+
+<textarea id="payload" rows="5" placeholder='{"query":"Hello AI"}'></textarea>
+
+<button onclick="send()">Send Request</button>
+
+<div class="response" id="response">
+Waiting for request...
+</div>
+
+</div>
+
+<!-- API STATUS -->
+<div class="card">
+
+<h3>📡 API Status Monitor</h3>
+
+<div class="log">✔ /ai/generate — 200 OK</div>
+<div class="log">✔ /analytics/summary — 200 OK</div>
+<div class="log">⚠ /user/data — delayed response</div>
+<div class="log">✔ /system/status — stable</div>
+
+</div>
+
+<!-- API KEYS -->
+<div class="card">
+
+<h3>🔑 API Keys</h3>
+
+<p>Production Key:</p>
+<input value="sk-atlas-prod-XXXXXXX">
+
+<p>Test Key:</p>
+<input value="sk-atlas-test-XXXXXXX">
+
+<button onclick="rotate()">Rotate Keys</button>
+
+</div>
+
+<!-- LOG STREAM -->
+<div class="card">
+
+<h3>📜 Live API Logs</h3>
+
+<div id="logs">
+<div class="log">[10:41] Request received from client A</div>
+<div class="log">[10:42] AI model executed successfully</div>
+<div class="log">[10:43] Response sent (latency: 120ms)</div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function send(){
+let endpoint = document.getElementById("endpoint").value;
+let payload = document.getElementById("payload").value;
+let res = document.getElementById("response");
+
+res.innerHTML = "⏳ Sending request...\n";
+
+setTimeout(()=>{
+res.innerHTML += "\n📡 Endpoint: " + endpoint;
+res.innerHTML += "\n📦 Payload: " + payload;
+res.innerHTML += "\n\n✅ Response:";
+res.innerHTML += "\n{";
+res.innerHTML += '\n  "status": "success",';
+res.innerHTML += '\n  "data": "AI processed request",';
+res.innerHTML += '\n  "latency": "132ms"';
+res.innerHTML += "\n}";
+},1200);
+}
+
+function rotate(){
+alert("🔑 API Keys rotated successfully (simulated)");
+}
+
+</script>
+
+</body>
+</html>

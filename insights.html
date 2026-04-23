@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insights Engine - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#ffcc00;
+  font-size:18px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.2s;
+}
+
+.card:hover{
+  border-color:#ffcc00;
+  transform:translateY(-2px);
+}
+
+/* BIG VALUE */
+.big{
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* AI SIGNALS */
+.signal{
+  padding:10px;
+  margin:10px 0;
+  border-left:3px solid #ffcc00;
+  background:#0f0f0f;
+  border-radius:8px;
+  font-size:13px;
+}
+
+/* HEATMAP STYLE BLOCKS */
+.heatmap{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:4px;
+  margin-top:10px;
+}
+
+.cell{
+  height:12px;
+  background:#222;
+  border-radius:3px;
+}
+
+.cell.active{
+  background:linear-gradient(180deg,#ffcc00,#ff6600);
+}
+
+/* BUTTONS */
+button{
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  background:#ffcc00;
+  color:black;
+  cursor:pointer;
+  margin:5px;
+}
+
+button:hover{
+  opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">🧠 AI Intelligence & Insight Engine (SV-Grade)</div>
+
+<!-- KPI STRIP -->
+<div class="grid">
+
+<div class="card">
+<div class="big">2.8M</div>
+<p>Signals Processed / Day</p>
+</div>
+
+<div class="card">
+<div class="big">87%</div>
+<p>Pattern Accuracy</p>
+</div>
+
+<div class="card">
+<div class="big">142</div>
+<p>Active AI Nodes</p>
+</div>
+
+<div class="card">
+<div class="big">12ms</div>
+<p>Inference Delay</p>
+</div>
+
+</div>
+
+<!-- CORE INSIGHTS -->
+<div class="grid">
+
+<div class="card">
+<h3>📡 Behavioral Pattern Detection</h3>
+<p>Users show peak AI usage between 7PM–11PM.</p>
+<div class="signal">High engagement cluster detected in Asia region</div>
+</div>
+
+<div class="card">
+<h3>🌍 Regional Intelligence</h3>
+<p>Nepal + Global sync analysis active</p>
+<div class="signal">Kathmandu: +22% AI usage spike</div>
+<div class="signal">Pokhara: tourism AI queries rising</div>
+</div>
+
+<div class="card">
+<h3>⚠ Anomaly Detection</h3>
+<div class="signal">Unusual API burst detected (auto-resolved)</div>
+<div class="signal">Latency spike EU region stabilized</div>
+</div>
+
+</div>
+
+<!-- HEATMAP -->
+<div class="card" style="margin:20px">
+<h3>🔥 AI Activity Heatmap</h3>
+
+<div class="heatmap">
+<div class="cell active"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell active"></div>
+<div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div>
+
+<div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div>
+<div class="cell active"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell active"></div>
+</div>
+
+</div>
+
+<!-- INSIGHT STREAM -->
+<div class="card" style="margin:20px">
+
+<h3>📊 Live Insight Stream</h3>
+
+<div class="signal">AI model detected rising demand for predictive analytics tools</div>
+<div class="signal">User behavior shifting toward long-form AI queries</div>
+<div class="signal">System suggests scaling GPU cluster by +18%</div>
+<div class="signal">Recommendation: optimize chat response pipeline</div>
+
+</div>
+
+<!-- ACTIONS -->
+<div style="padding:20px">
+
+<h3>🚀 Insight Controls</h3>
+
+<button>Generate Deep Report</button>
+<button>Run Pattern Scan</button>
+<button>Export Intelligence Data</button>
+<button>Train Insight Model</button>
+
+</div>
+
+</body>
+</html>

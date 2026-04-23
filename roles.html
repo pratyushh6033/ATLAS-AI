@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Roles - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+  padding:20px;
+}
+
+/* HEADER */
+h1{
+  color:#ff0033;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:10px;
+  margin:10px 0;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.2s;
+}
+
+.card:hover{
+  border-color:#ff0033;
+  transform:translateY(-2px);
+}
+
+/* AUDIO CONTROL */
+.audio-box{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#111;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+button{
+  padding:8px 10px;
+  border:none;
+  border-radius:6px;
+  background:#ff0033;
+  color:black;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🔐 Roles</h1>
+
+<div class="card">Admin - Full Access</div>
+<div class="card">Developer - API + AI Access</div>
+<div class="card">User - Limited Access</div>
+
+<!-- AUDIO -->
+<audio id="bgAudio" loop>
+  <!-- soothing ambient sound -->
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_c8c8a0c6f4.mp3?filename=ambient-piano-112194.mp3" type="audio/mpeg">
+</audio>
+
+<div class="audio-box">
+<button onclick="toggleAudio()">🔊 Toggle Sound</button>
+</div>
+
+<script>
+let audio = document.getElementById("bgAudio");
+
+// try autoplay (browser may block)
+window.addEventListener("load", () => {
+  audio.volume = 0.3;
+  audio.play().catch(() => {
+    console.log("Autoplay blocked");
+  });
+});
+
+function toggleAudio(){
+  if(audio.paused){
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+</script>
+
+</body>
+</html>

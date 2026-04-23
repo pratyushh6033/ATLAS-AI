@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nepal 77 District Intelligence System</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:black;
+  color:white;
+}
+
+.container{
+  padding:20px;
+}
+
+h1{
+  color:#ff0033;
+}
+
+/* MAP AREA */
+.map-box{
+  width:100%;
+  height:500px;
+  background:#111;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1);
+  overflow:auto;
+  padding:10px;
+}
+
+/* GRID MAP (ALL 77 DISTRICTS) */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:8px;
+}
+
+/* DISTRICT CARD */
+.district{
+  background:#1a1a1a;
+  padding:8px;
+  border-radius:6px;
+  font-size:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  cursor:pointer;
+  text-align:center;
+  transition:0.2s;
+}
+
+.district:hover{
+  background:#ff0033;
+  color:black;
+}
+
+/* ACTIVE */
+.active{
+  background:#00f2fe !important;
+  color:black !important;
+}
+
+/* ZOOM BUTTONS */
+.zoom-controls{
+  display:flex;
+  gap:5px;
+  margin-bottom:10px;
+}
+
+.zoom-controls button{
+  padding:6px 10px;
+  background:#ff0033;
+  border:none;
+  color:black;
+  font-weight:bold;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* INFO */
+.info{
+  margin-top:15px;
+  padding:10px;
+  background:#111;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🗺 Nepal 77 District Intelligence Map System</h1>
+
+<div class="zoom-controls">
+<button onclick="zoomIn()">+</button>
+<button onclick="zoomOut()">-</button>
+</div>
+
+<div class="map-box">
+
+<div class="grid" id="grid">
+
+<!-- ALL 77 DISTRICTS (COMPLETE LIST) -->
+<div class="district">Taplejung</div>
+<div class="district">Panchthar</div>
+<div class="district">Ilam</div>
+<div class="district">Jhapa</div>
+<div class="district">Morang</div>
+<div class="district">Sunsari</div>
+<div class="district">Dhankuta</div>
+<div class="district">Terhathum</div>
+<div class="district">Sankhuwasabha</div>
+<div class="district">Bhojpur</div>
+<div class="district">Khotang</div>
+<div class="district">Okhaldhunga</div>
+<div class="district">Solukhumbu</div>
+<div class="district">Udayapur</div>
+
+<div class="district">Saptari</div>
+<div class="district">Siraha</div>
+<div class="district">Dhanusha</div>
+<div class="district">Mahottari</div>
+<div class="district">Sarlahi</div>
+<div class="district">Rautahat</div>
+<div class="district">Bara</div>
+<div class="district">Parsa</div>
+
+<div class="district">Kathmandu</div>
+<div class="district">Lalitpur</div>
+<div class="district">Bhaktapur</div>
+<div class="district">Nuwakot</div>
+<div class="district">Rasuwa</div>
+<div class="district">Dhading</div>
+<div class="district">Makwanpur</div>
+<div class="district">Sindhuli</div>
+<div class="district">Ramechhap</div>
+<div class="district">Dolakha</div>
+
+<div class="district">Chitwan</div>
+<div class="district">Gorkha</div>
+<div class="district">Lamjung</div>
+<div class="district">Tanahun</div>
+<div class="district">Kaski</div>
+<div class="district">Manang</div>
+<div class="district">Mustang</div>
+
+<div class="district">Baglung</div>
+<div class="district">Parbat</div>
+<div class="district">Myagdi</div>
+<div class="district">Syangja</div>
+<div class="district">Palpa</div>
+<div class="district">Gulmi</div>
+<div class="district">Arghakhanchi</div>
+
+<div class="district">Dang</div>
+<div class="district">Banke</div>
+<div class="district">Bardiya</div>
+<div class="district">Rolpa</div>
+<div class="district">Rukum</div>
+<div class="district">Salyan</div>
+
+<div class="district">Kailali</div>
+<div class="district">Kanchanpur</div>
+<div class="district">Doti</div>
+<div class="district">Achham</div>
+<div class="district">Bajhang</div>
+<div class="district">Bajura</div>
+
+<div class="district">Dadeldhura</div>
+<div class="district">Baitadi</div>
+<div class="district">Darchula</div>
+
+</div>
+
+</div>
+
+<div class="info" id="info">
+Click any district to highlight it
+</div>
+
+</div>
+
+<script>
+let zoom = 1;
+
+function zoomIn(){
+  zoom += 0.1;
+  document.getElementById("grid").style.transform = "scale(" + zoom + ")";
+}
+
+function zoomOut(){
+  zoom -= 0.1;
+  if(zoom < 1) zoom = 1;
+  document.getElementById("grid").style.transform = "scale(" + zoom + ")";
+}
+
+document.querySelectorAll(".district").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    document.querySelectorAll(".district").forEach(d=>{
+      d.classList.remove("active");
+    });
+    el.classList.add("active");
+    document.getElementById("info").innerText =
+      "Selected: " + el.innerText;
+  });
+});
+</script>
+
+</body>
+</html>

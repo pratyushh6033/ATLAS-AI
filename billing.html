@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Billing - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#00f2fe;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* PLAN CARD */
+.plan{
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.2s;
+}
+
+.plan:hover{
+  transform:translateY(-4px);
+  border-color:#00f2fe;
+}
+
+/* TITLE */
+.title{
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* PRICE */
+.price{
+  font-size:28px;
+  color:#00ff88;
+  margin:10px 0;
+}
+
+/* BUTTON */
+button{
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  background:#00f2fe;
+  color:black;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* USAGE BAR */
+.bar{
+  height:10px;
+  background:#222;
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.fill{
+  height:100%;
+  width:65%;
+  background:linear-gradient(90deg,#00f2fe,#00ff88);
+}
+
+/* INVOICE */
+.invoice{
+  padding:10px;
+  margin:8px 0;
+  background:#0b0b0b;
+  border-left:3px solid #00f2fe;
+  border-radius:6px;
+  font-size:13px;
+}
+
+/* WARNING */
+.warn{
+  background:#1a0f0f;
+  border:1px solid #ff0033;
+  padding:10px;
+  border-radius:8px;
+  margin:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+💳 Atlas AI Billing & Subscription Engine
+</div>
+
+<!-- ALERT -->
+<div class="warn">
+⚠ Your usage is approaching 75% of monthly quota. Consider upgrading for uninterrupted AI access.
+</div>
+
+<!-- PLANS -->
+<div class="grid">
+
+<div class="card plan">
+<div class="title">Starter</div>
+<div class="price">$0</div>
+<p>Basic AI access</p>
+<p>✔ 1,000 requests/month</p>
+<p>✔ Limited analytics</p>
+<button>Current Plan</button>
+</div>
+
+<div class="card plan">
+<div class="title">Pro</div>
+<div class="price">$19/mo</div>
+<p>Advanced AI tools</p>
+<p>✔ 100,000 requests/month</p>
+<p>✔ Full analytics</p>
+<p>✔ Automation access</p>
+<button>Upgrade</button>
+</div>
+
+<div class="card plan">
+<div class="title">Enterprise</div>
+<div class="price">$99/mo</div>
+<p>Full AI ecosystem</p>
+<p>✔ Unlimited requests</p>
+<p>✔ Priority compute</p>
+<p>✔ API + integrations</p>
+<button>Upgrade</button>
+</div>
+
+</div>
+
+<!-- USAGE -->
+<div class="card" style="margin:20px">
+
+<h3>📊 Usage Meter</h3>
+<p>AI Requests Used: 65%</p>
+
+<div class="bar"><div class="fill"></div></div>
+
+</div>
+
+<!-- COST BREAKDOWN -->
+<div class="grid">
+
+<div class="card">
+<h3>💰 Current Cost</h3>
+<h2>$12.40</h2>
+<p>This month</p>
+</div>
+
+<div class="card">
+<h3>⚡ AI Compute Cost</h3>
+<h2>$8.10</h2>
+<p>Model usage</p>
+</div>
+
+<div class="card">
+<h3>🌐 API Cost</h3>
+<h2>$3.20</h2>
+<p>External services</p>
+</div>
+
+<div class="card">
+<h3>☁ Infrastructure</h3>
+<h2>$1.10</h2>
+<p>Cloud & storage</p>
+</div>
+
+</div>
+
+<!-- INVOICES -->
+<div class="card" style="margin:20px">
+
+<h3>📄 Invoice History</h3>
+
+<div class="invoice">#INV-001 — Paid — $9.99</div>
+<div class="invoice">#INV-002 — Paid — $12.49</div>
+<div class="invoice">#INV-003 — Pending — $14.99</div>
+
+</div>
+
+</body>
+</html>

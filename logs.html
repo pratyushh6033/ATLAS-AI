@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>System Logs - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:monospace;
+  background:#000;
+  color:#00ff88;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#00f2fe;
+}
+
+/* CONTAINER */
+.container{
+  padding:20px;
+}
+
+/* LOG BOX */
+.logbox{
+  background:#0b0b0b;
+  padding:15px;
+  border-radius:10px;
+  height:400px;
+  overflow:auto;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* LOG ENTRY */
+.log{
+  margin:6px 0;
+  font-size:13px;
+}
+
+/* TYPES */
+.info{color:#00f2fe;}
+.warn{color:#ffcc00;}
+.error{color:#ff0033;}
+.ai{color:#00ff88;}
+
+/* BUTTONS */
+button{
+  padding:8px 10px;
+  margin:5px;
+  border:none;
+  border-radius:6px;
+  background:#111;
+  color:white;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+button:hover{
+  border-color:#00f2fe;
+}
+
+/* FILTER BAR */
+.filters{
+  margin-bottom:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🧾 Atlas AI System Logs Console (Real-Time Simulation)
+</div>
+
+<div class="container">
+
+<div class="filters">
+<button onclick="filter('all')">ALL</button>
+<button onclick="filter('info')">INFO</button>
+<button onclick="filter('warn')">WARN</button>
+<button onclick="filter('error')">ERROR</button>
+<button onclick="filter('ai')">AI</button>
+</div>
+
+<div class="logbox" id="logbox">
+
+<div class="log info">[INFO] System initialized successfully</div>
+<div class="log ai">[AI] Neural engine synchronized with 142 nodes</div>
+<div class="log warn">[WARN] High CPU usage detected in model training</div>
+<div class="log error">[ERROR] GPU overload avoided by auto-throttle system</div>
+<div class="log info">[INFO] User session analytics updated</div>
+<div class="log ai">[AI] Predictive model accuracy improved by 3.2%</div>
+<div class="log warn">[WARN] Latency spike in Asia region resolved</div>
+
+</div>
+
+</div>
+
+<script>
+
+function filter(type){
+let logs = document.querySelectorAll(".log");
+
+logs.forEach(log => {
+if(type === "all"){
+log.style.display = "block";
+}else{
+if(log.classList.contains(type)){
+log.style.display = "block";
+}else{
+log.style.display = "none";
+}
+}
+});
+}
+
+// live fake log generator
+setInterval(() => {
+let messages = [
+"[INFO] background optimization running",
+"[AI] learning new user patterns",
+"[WARN] memory usage balancing",
+"[INFO] cache refreshed successfully",
+"[AI] anomaly detection scan completed"
+];
+
+let types = ["info","ai","warn"];
+
+let msg = messages[Math.floor(Math.random()*messages.length)];
+let type = types[Math.floor(Math.random()*types.length)];
+
+let div = document.createElement("div");
+div.className = "log " + type;
+div.innerHTML = msg;
+
+document.getElementById("logbox").prepend(div);
+
+}, 3000);
+
+</script>
+
+</body>
+</html>

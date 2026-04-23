@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DataHub Game - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#00f2fe;
+}
+
+/* LAYOUT */
+.container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* BIG SCORE */
+.score{
+  font-size:40px;
+  color:#00ff88;
+}
+
+/* BUTTON */
+button{
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  background:#00f2fe;
+  color:black;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* PROGRESS BAR */
+.bar{
+  height:10px;
+  background:#222;
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#00ff88,#00f2fe);
+  width:0%;
+}
+
+/* LOG */
+.log{
+  height:200px;
+  overflow:auto;
+  background:#0b0b0b;
+  padding:10px;
+  border-radius:8px;
+  font-size:12px;
+}
+
+.mission{
+  padding:10px;
+  margin:8px 0;
+  background:#1a1a1a;
+  border-left:3px solid #00f2fe;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🎮 Atlas AI DataHub Game Mode
+</div>
+
+<div class="container">
+
+<!-- GAME STATS -->
+<div class="card">
+
+<h3>💰 Data Points</h3>
+<div class="score" id="points">0</div>
+
+<button onclick="collect()">Collect Data</button>
+
+<h3>📈 AI Progress</h3>
+<div class="bar"><div class="fill" id="bar"></div></div>
+
+</div>
+
+<!-- MISSIONS -->
+<div class="card">
+
+<h3>🎯 Missions</h3>
+
+<div class="mission">Collect 100 Data Points</div>
+<div class="mission">Unlock AI Core Module</div>
+<div class="mission">Reach 500 Intelligence Score</div>
+
+</div>
+
+<!-- LOG SYSTEM -->
+<div class="card">
+
+<h3>📜 AI Activity Log</h3>
+
+<div class="log" id="log">
+System initialized...<br>
+AI nodes syncing...<br>
+DataHub ready.<br>
+</div>
+
+</div>
+
+<!-- UPGRADE PANEL -->
+<div class="card">
+
+<h3>⚡ Upgrades</h3>
+
+<button onclick="upgrade()">Boost Data Multiplier (+1)</button>
+<button onclick="auto()">Enable Auto Collection</button>
+
+<p>Multiplier: <span id="multi">1</span>x</p>
+
+</div>
+
+</div>
+
+<script>
+
+let points = 0;
+let multi = 1;
+let autoMode = false;
+
+function log(msg){
+document.getElementById("log").innerHTML += msg + "<br>";
+}
+
+function collect(){
+points += 10 * multi;
+document.getElementById("points").innerText = points;
+
+let percent = Math.min(points / 5, 100);
+document.getElementById("bar").style.width = percent + "%";
+
+log("Collected +"+(10*multi)+" data points");
+
+checkMission();
+}
+
+function upgrade(){
+multi++;
+document.getElementById("multi").innerText = multi;
+log("Multiplier increased to "+multi+"x");
+}
+
+function auto(){
+autoMode = !autoMode;
+
+if(autoMode){
+log("Auto Collection ENABLED");
+setInterval(()=>{
+collect();
+},2000);
+}else{
+log("Auto Collection STOPPED");
+}
+}
+
+function checkMission(){
+if(points >= 100){
+log("🎯 Mission Complete: 100 Data Points");
+}
+
+if(points >= 500){
+log("🔥 AI CORE UNLOCKED");
+}
+}
+
+</script>
+
+</body>
+</html>

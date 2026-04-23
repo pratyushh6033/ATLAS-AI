@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Workspace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="layout">
+
+<div class="sidebar">
+<a href="dashboard.html">Back</a>
+<a href="ai.html">AI Workspace</a>
+</div>
+
+<div class="main">
+
+<h1>AI Workspace (Multimodal AI)</h1>
+<div class="jarvis-indicator">
+
+<span class="dot"></span>
+JARVIS is active in this workspace
+
+</div>
+
+<p class="jarvis-sub">
+AI assistant monitoring and ready to assist your actions
+</p>
+
+<!-- IMAGE UPLOAD AREA -->
+<div class="card upload">
+
+<h3>📸 Upload Image for AI Analysis</h3>
+
+<input type="file" accept="image/*">
+
+<p class="hint">
+AI can analyze images, detect objects, and explain visual content.
+</p>
+
+</div>
+
+<!-- IMAGE PREVIEW (SIMULATED) -->
+<div class="card preview">
+
+<h3>🖼️ Image Preview</h3>
+
+<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" />
+
+<p>AI detected: Laptop, Code, Developer Workspace</p>
+
+</div>
+
+<!-- CHAT SECTION -->
+<div class="chat">
+
+<div class="msg user">
+What do you see in this image?
+</div>
+
+<div class="msg bot">
+I can see a workspace with a laptop showing code. This suggests software development activity.
+</div>
+
+<div class="msg bot typing">
+<span></span><span></span><span></span>
+</div>
+
+</div>
+
+<!-- INPUT -->
+<div class="input">
+
+<input placeholder="Ask about image or text...">
+<button>Send</button>
+<button onclick="activateJarvis()" class="jarvis-btn">
+🧠 Activate JARVIS
+</button>
+
+</div>
+
+</div>
+
+</div>
+<script>
+function activateJarvis(){
+
+  // prevent multiple triggers
+  speechSynthesis.cancel();
+
+  // voice message
+  let msg = new SpeechSynthesisUtterance(
+    "Hey, I am Jarvis. What do you need?"
+  );
+
+  msg.rate = 1;
+  msg.pitch = 1;
+  msg.volume = 1;
+
+  speechSynthesis.speak(msg);
+
+  // optional visual alert
+  alert("JARVIS ACTIVATED 🧠");
+
+}
+</script>
+
+
+</body>
+</html>

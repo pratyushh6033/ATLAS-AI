@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Activity - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#ffcc00;
+  font-size:18px;
+}
+
+/* CONTAINER */
+.container{
+  padding:20px;
+}
+
+/* LOG BOX */
+.log{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  height:400px;
+  overflow:auto;
+}
+
+/* ENTRY */
+.entry{
+  padding:8px;
+  margin:6px 0;
+  border-left:3px solid #ffcc00;
+  background:#0f0f0f;
+  border-radius:6px;
+  font-size:13px;
+}
+
+/* BUTTON */
+button{
+  margin-top:10px;
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  background:#ffcc00;
+  color:black;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">😂 Atlas AI Chaos Activity Feed</div>
+
+<div class="container">
+
+<button onclick="generate()">Generate Funny Activity</button>
+
+<div class="log" id="log">
+
+<div class="entry">🟢 System booted successfully (barely awake)</div>
+<div class="entry">🤖 AI tried to understand humans... gave up halfway</div>
+<div class="entry">⚠ User clicked a button 37 times. suspicious behavior detected.</div>
+<div class="entry">🧠 Neural network is thinking… still thinking… still thinking…</div>
+
+</div>
+
+</div>
+
+<script>
+
+const funnyLogs = [
+"🤖 AI: 'I understand everything.' (proceeds to misunderstand everything)",
+"💀 System error: Too much intelligence detected. rebooting sarcasm module.",
+"🧠 Atlas AI tried cooking data. it burned the database.",
+"😂 User searched 'why am i tired' — AI responded: 'because life.'",
+"⚠ Warning: AI is overthinking again.",
+"🚀 Model update failed because it refused to update itself.",
+"📡 Server status: emotionally unstable.",
+"🤖 AI started debugging humans instead of code.",
+"💾 Memory usage: 99% (mostly regrets)",
+"🔥 GPU is running hot because it saw your code."
+];
+
+function generate(){
+let log = document.getElementById("log");
+
+let random = funnyLogs[Math.floor(Math.random()*funnyLogs.length)];
+
+let div = document.createElement("div");
+div.className = "entry";
+div.innerHTML = random;
+
+log.prepend(div);
+}
+
+</script>
+
+</body>
+</html>

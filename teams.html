@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teams - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HERO */
+.hero{
+  height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  background:radial-gradient(circle at center,#111,#000);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.hero h1{
+  font-size:42px;
+  color:#00f2fe;
+  margin:0;
+}
+
+.hero p{
+  opacity:0.7;
+  max-width:600px;
+}
+
+/* SECTION */
+.section{
+  padding:40px 20px;
+}
+
+/* TEAM GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+/* TEAM CARD */
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+/* hover depth */
+.card:hover{
+  transform:translateY(-6px) scale(1.02);
+  border-color:#00f2fe;
+  box-shadow:0 10px 40px rgba(0,242,254,0.15);
+}
+
+/* glow strip */
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,#00f2fe,#7c4dff,#00ff88);
+}
+
+/* role badge */
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  font-size:12px;
+  border-radius:6px;
+  background:#1a1a1a;
+  color:#00f2fe;
+  margin-bottom:10px;
+}
+
+/* name */
+.name{
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* fade-in scroll effect (CSS only trick) */
+.fade{
+  opacity:0.9;
+}
+
+/* divider */
+.divider{
+  margin:40px 0;
+  height:1px;
+  background:rgba(255,255,255,0.08);
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<h1>🚀 Atlas AI Teams</h1>
+<p>
+A high-performance global engineering organization building next-generation AI systems,
+analytics engines, and intelligence infrastructure.
+</p>
+</div>
+
+<!-- AI CORE TEAM -->
+<div class="section">
+
+<h2>🧠 AI Core Division</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="badge">LEAD AI ENGINEER</div>
+<div class="name">Neural Systems Team</div>
+<p class="fade">Designing Atlas AI core reasoning models & inference engines.</p>
+</div>
+
+<div class="card">
+<div class="badge">MACHINE LEARNING</div>
+<div class="name">Model Training Unit</div>
+<p class="fade">Responsible for training, optimization & dataset refinement.</p>
+</div>
+
+<div class="card">
+<div class="badge">VISION AI</div>
+<div class="name">Multimodal Intelligence</div>
+<p class="fade">Image, video & spatial intelligence systems.</p>
+</div>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ENGINEERING -->
+<div class="section">
+
+<h2>⚙ Engineering Division</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="badge">BACKEND</div>
+<div class="name">Distributed Systems Team</div>
+<p>Handles scaling, APIs, and system architecture.</p>
+</div>
+
+<div class="card">
+<div class="badge">INFRASTRUCTURE</div>
+<div class="name">Cloud & DevOps Unit</div>
+<p>Maintains uptime, deployment pipelines, GPU clusters.</p>
+</div>
+
+<div class="card">
+<div class="badge">SECURITY</div>
+<div class="name">Cybersecurity Team</div>
+<p>Protects AI models, user data, and system integrity.</p>
+</div>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PRODUCT -->
+<div class="section">
+
+<h2>📦 Product & UX Division</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="badge">UX DESIGN</div>
+<div class="name">Human Interface Lab</div>
+<p>Designs AI workspace experience and interactions.</p>
+</div>
+
+<div class="card">
+<div class="badge">PRODUCT</div>
+<div class="name">Atlas Product Strategy</div>
+<p>Defines roadmap, features, and AI system evolution.</p>
+</div>
+
+<div class="card">
+<div class="badge">DATA ANALYTICS</div>
+<div class="name">Behavior Intelligence Unit</div>
+<p>Analyzes user behavior patterns and system insights.</p>
+</div>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- GLOBAL TEAM -->
+<div class="section">
+
+<h2>🌍 Global Operations</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="badge">GLOBAL SYNC</div>
+<div class="name">Realtime AI Network</div>
+<p>Connects global nodes for unified intelligence system.</p>
+</div>
+
+<div class="card">
+<div class="badge">OPS</div>
+<div class="name">System Reliability Team</div>
+<p>Ensures zero downtime global AI infrastructure.</p>
+</div>
+
+<div class="card">
+<div class="badge">RESEARCH</div>
+<div class="name">Future AI Lab</div>
+<p>Experimental AI systems and next-gen models.</p>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

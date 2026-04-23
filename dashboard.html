@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard - Atlas AI</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+.layout{
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:260px;
+  background:#0b0b0b;
+  padding:15px;
+  border-right:1px solid rgba(255,255,255,0.08);
+  height:100vh;
+  overflow-y:auto;
+}
+
+.sidebar h2{
+  color:#ff0033;
+}
+
+.sidebar a{
+  display:block;
+  padding:10px;
+  margin:6px 0;
+  text-decoration:none;
+  color:white;
+  opacity:0.7;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.sidebar a:hover{
+  background:#111;
+  opacity:1;
+}
+
+/* MAIN */
+.main{
+  flex:1;
+  padding:20px;
+  overflow:auto;
+}
+
+h1{
+  margin-bottom:15px;
+}
+
+/* GRID CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.2s;
+}
+
+.card:hover{
+  border-color:#ff0033;
+  transform:translateY(-2px);
+}
+
+/* SECTIONS */
+.section-row{
+  display:flex;
+  gap:15px;
+  margin-top:20px;
+}
+
+.wide{
+  flex:2;
+}
+
+.feed p{
+  opacity:0.8;
+  margin:6px 0;
+}
+
+/* HEALTH BARS */
+.health div{
+  height:8px;
+  margin:5px 0;
+  border-radius:5px;
+}
+
+.bar1{width:90%;background:#00f2fe;}
+.bar2{width:70%;background:#7c4dff;}
+.bar3{width:85%;background:#00ff88;}
+.bar4{width:60%;background:#ff0033;}
+
+/* BUTTONS */
+.actions button{
+  margin:5px;
+  padding:8px 12px;
+  border:none;
+  border-radius:6px;
+  background:#1a1a1a;
+  color:white;
+  cursor:pointer;
+}
+
+.actions button:hover{
+  background:#ff0033;
+  color:black;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h2>Atlas AI</h2>
+
+<!-- CORE -->
+<a href="dashboard.html">🏠 Home</a>
+<a href="overview.html">📌 System Overview</a>
+
+<!-- AI -->
+<a href="ai.html">🧠 AI Workspace</a>
+<a href="chat.html">💬 AI Chat</a>
+<a href="models.html">🤖 AI Models</a>
+
+<!-- ANALYTICS -->
+<a href="analytics.html">📊 Analytics</a>
+<a href="reports.html">📈 Reports</a>
+<a href="insights.html">🔍 Insights Engine</a>
+
+<!-- USERS -->
+<a href="users.html">👤 Users</a>
+<a href="teams.html">👥 Teams</a>
+<a href="roles.html">🔐 Roles</a>
+<a href="permissions.html">🛡 Permissions</a>
+
+<!-- DATA -->
+<a href="datahub.html">🧬 Data Hub</a>
+<a href="activity.html">⚡ Live Activity</a>
+<a href="logs.html">📜 System Logs</a>
+
+<!-- GLOBAL -->
+<a href="global.html">🌍 Global Insights</a>
+<a href="map.html">🗺 Nepal Map</a>
+
+<!-- CONTROL -->
+<a href="automation.html">⚙ Automation</a>
+<a href="security.html">🛡 Security Center</a>
+<a href="settings.html">⚙ Settings</a>
+
+<!-- SAAS LAYER -->
+<a href="api.html">🔌 API Access</a>
+<a href="integrations.html">🔗 Integrations</a>
+<a href="billing.html">💳 Billing</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h1>System Overview</h1>
+
+<!-- KPI -->
+<div class="grid">
+
+<div class="card">
+<h2>12.4K</h2>
+<p>Active Users</p>
+</div>
+
+<div class="card">
+<h2>94%</h2>
+<p>AI Accuracy</p>
+</div>
+
+<div class="card">
+<h2>99.9%</h2>
+<p>Uptime</p>
+</div>
+
+<div class="card">
+<h2>3</h2>
+<p>Active Models</p>
+</div>
+
+</div>
+
+<!-- LIVE SYSTEM -->
+<div class="section-row">
+
+<div class="card wide">
+
+<h3>📡 Live Activity Feed</h3>
+
+<div class="feed">
+<p>🟢 User "Alex" started AI session</p>
+<p>🟡 Model update deployed</p>
+<p>🟢 New user registered</p>
+<p>🔴 API latency spike detected</p>
+<p>🟢 System stabilized</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>👤 User Status</h3>
+
+<p>🟢 Online: 8,421</p>
+<p>🔵 Idle: 2,100</p>
+<p>⚫ Offline: 1,879</p>
+
+</div>
+
+</div>
+
+<!-- SYSTEM HEALTH -->
+<div class="card">
+
+<h3>⚡ System Health Monitor</h3>
+
+<div class="health">
+<div class="bar1"></div>
+<div class="bar2"></div>
+<div class="bar3"></div>
+<div class="bar4"></div>
+</div>
+
+<p>All systems operational</p>
+
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="card">
+
+<h3>🚀 Quick Actions</h3>
+
+<div class="actions">
+
+<button>Restart AI Engine</button>
+<button>Run Diagnostics</button>
+<button>Export Logs</button>
+<button>Deploy Update</button>
+
+</div>
+
+</div>
+
+<!-- LOGS -->
+<div class="card">
+
+<h3>📜 Recent System Logs</h3>
+
+<p>[10:41] AI model updated</p>
+<p>[10:38] User session optimized</p>
+<p>[10:35] Cache refreshed</p>
+<p>[10:30] Security scan passed</p>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

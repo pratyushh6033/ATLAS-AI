@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Permissions Gate - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+  padding:20px;
+}
+
+/* HEADER */
+h1{
+  color:#7c4dff;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:10px;
+  margin:10px 0;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* INPUT */
+input{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border:none;
+  border-radius:6px;
+  background:#1a1a1a;
+  color:white;
+}
+
+/* BUTTON */
+button{
+  margin-top:10px;
+  padding:10px 12px;
+  border:none;
+  border-radius:6px;
+  background:#7c4dff;
+  color:white;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* STATUS */
+.status{
+  margin-top:10px;
+  font-size:14px;
+}
+
+/* LOCKED PANEL */
+.locked{
+  opacity:0.3;
+  pointer-events:none;
+}
+
+/* UNLOCKED */
+.unlocked{
+  border:1px solid #00ff88;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🛡 AI Permission Security Gate</h1>
+
+<div class="card">
+<h3>Level 1: Basic Logic</h3>
+<p>If 3 AI models process 900 requests in 3 seconds, how many requests per model per second?</p>
+
+<input id="q1" placeholder="Enter answer">
+<button onclick="check1()">Submit</button>
+<div class="status" id="s1"></div>
+</div>
+
+<div class="card">
+<h3>Level 2: Pattern Recognition</h3>
+<p>Find missing number: 2, 6, 12, 20, ?</p>
+
+<input id="q2" placeholder="Enter answer">
+<button onclick="check2()">Submit</button>
+<div class="status" id="s2"></div>
+</div>
+
+<div class="card">
+<h3>Level 3: AI Logic Gate</h3>
+<p>If AI confidence = 80% and error rate decreases by 50%, what is new error rate if original was 20%?</p>
+
+<input id="q3" placeholder="Enter answer">
+<button onclick="check3()">Submit</button>
+<div class="status" id="s3"></div>
+</div>
+
+<!-- LOCKED AI PANEL -->
+<div class="card locked" id="aiPanel">
+<h3>🤖 AI SYSTEM ACCESS</h3>
+<p>Access granted to system-level AI controls.</p>
+<p>✔ Model tuning enabled</p>
+<p>✔ Data access granted</p>
+<p>✔ Neural engine unlocked</p>
+</div>
+
+<script>
+
+let score = 0;
+
+function check1(){
+let val = document.getElementById("q1").value;
+if(val == "100"){
+document.getElementById("s1").innerHTML = "✅ Correct";
+score++;
+unlock();
+}else{
+document.getElementById("s1").innerHTML = "❌ Wrong";
+}
+}
+
+function check2(){
+let val = document.getElementById("q2").value;
+if(val == "30"){
+document.getElementById("s2").innerHTML = "✅ Correct";
+score++;
+unlock();
+}else{
+document.getElementById("s2").innerHTML = "❌ Wrong";
+}
+}
+
+function check3(){
+let val = document.getElementById("q3").value;
+if(val == "10"){
+document.getElementById("s3").innerHTML = "✅ Correct";
+score++;
+unlock();
+}else{
+document.getElementById("s3").innerHTML = "❌ Wrong";
+}
+}
+
+function unlock(){
+if(score >= 3){
+document.getElementById("aiPanel").classList.remove("locked");
+document.getElementById("aiPanel").classList.add("unlocked");
+}
+}
+
+</script>
+
+</body>
+</html>

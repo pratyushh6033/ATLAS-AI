@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Models - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#7c4dff;
+  font-size:18px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.2s;
+}
+
+.card:hover{
+  border-color:#7c4dff;
+  transform:translateY(-2px);
+}
+
+/* TITLE */
+.title{
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+/* STATUS */
+.status{
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:6px;
+  display:inline-block;
+  margin-bottom:10px;
+}
+
+.active{background:#00ff88;color:#000;}
+.stable{background:#00f2fe;color:#000;}
+.training{background:#ffcc00;color:#000;}
+
+/* BAR */
+.bar{
+  height:8px;
+  background:#222;
+  border-radius:5px;
+  margin:10px 0;
+  overflow:hidden;
+}
+
+.fill{
+  height:100%;
+  background:#7c4dff;
+}
+
+/* TOGGLE */
+.toggle{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:10px;
+}
+
+.switch{
+  width:40px;
+  height:20px;
+  background:#333;
+  border-radius:20px;
+  position:relative;
+  cursor:pointer;
+}
+
+.switch::after{
+  content:"";
+  width:16px;
+  height:16px;
+  background:white;
+  position:absolute;
+  top:2px;
+  left:2px;
+  border-radius:50%;
+  transition:0.3s;
+}
+
+.switch.on{
+  background:#7c4dff;
+}
+
+.switch.on::after{
+  left:22px;
+}
+
+/* BUTTON */
+button{
+  margin-top:10px;
+  padding:8px 12px;
+  border:none;
+  background:#7c4dff;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">🤖 AI Model Control Center</div>
+
+<div class="grid">
+
+<!-- MODEL 1 -->
+<div class="card">
+<div class="title">Atlas Core GPT</div>
+<div class="status active">ACTIVE</div>
+
+<p>Accuracy: 96%</p>
+
+<div class="bar"><div class="fill" style="width:96%"></div></div>
+
+<p>Requests: 1.2M/day</p>
+
+<div class="toggle">
+<span>Enable Model</span>
+<div class="switch on" onclick="toggle(this)"></div>
+</div>
+
+<button>Deploy Update</button>
+</div>
+
+<!-- MODEL 2 -->
+<div class="card">
+<div class="title">Atlas Vision AI</div>
+<div class="status stable">STABLE</div>
+
+<p>Image Recognition: 92%</p>
+
+<div class="bar"><div class="fill" style="width:92%"></div></div>
+
+<p>Latency: 280ms</p>
+
+<div class="toggle">
+<span>Enable Model</span>
+<div class="switch on" onclick="toggle(this)"></div>
+</div>
+
+<button>Re-train Model</button>
+</div>
+
+<!-- MODEL 3 -->
+<div class="card">
+<div class="title">Atlas Analytics Engine</div>
+<div class="status training">TRAINING</div>
+
+<p>Prediction Accuracy: 89%</p>
+
+<div class="bar"><div class="fill" style="width:89%"></div></div>
+
+<p>Status: Improving dataset learning</p>
+
+<div class="toggle">
+<span>Enable Model</span>
+<div class="switch" onclick="toggle(this)"></div>
+</div>
+
+<button>Monitor Training</button>
+</div>
+
+</div>
+
+<script>
+function toggle(el){
+  el.classList.toggle("on");
+}
+</script>
+
+</body>
+</html>

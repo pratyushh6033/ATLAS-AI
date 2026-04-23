@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Automation Engine - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  color:#7c4dff;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:#7c4dff;
+}
+
+/* TITLE */
+.title{
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+/* FLOW LINE */
+.flow{
+  font-size:12px;
+  opacity:0.8;
+  margin:6px 0;
+  border-left:2px solid #7c4dff;
+  padding-left:8px;
+}
+
+/* STATUS */
+.status{
+  font-size:12px;
+  padding:4px 8px;
+  display:inline-block;
+  border-radius:6px;
+  margin-bottom:10px;
+}
+
+.active{background:#00ff88;color:#000;}
+.idle{background:#333;color:#fff;}
+
+/* BUTTON */
+button{
+  padding:8px 10px;
+  border:none;
+  border-radius:6px;
+  background:#7c4dff;
+  color:white;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* RUNNING ANIMATION */
+.run{
+  color:#00ff88;
+  font-size:12px;
+  margin-top:8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+⚙ Atlas AI Automation Engine (Workflow System)
+</div>
+
+<div class="grid">
+
+<!-- WORKFLOW 1 -->
+<div class="card">
+<div class="title">📩 Smart Email Analyzer</div>
+<div class="status active">ACTIVE</div>
+
+<div class="flow">Trigger: New Email Received</div>
+<div class="flow">AI Step: Sentiment Analysis</div>
+<div class="flow">Action: Auto Categorize</div>
+
+<button onclick="run(this)">Run Workflow</button>
+<div class="run"></div>
+</div>
+
+<!-- WORKFLOW 2 -->
+<div class="card">
+<div class="title">📊 Data Insight Generator</div>
+<div class="status idle">IDLE</div>
+
+<div class="flow">Trigger: Daily Schedule</div>
+<div class="flow">AI Step: Pattern Detection</div>
+<div class="flow">Action: Generate Report</div>
+
+<button onclick="run(this)">Run Workflow</button>
+<div class="run"></div>
+</div>
+
+<!-- WORKFLOW 3 -->
+<div class="card">
+<div class="title">🧠 AI Learning Loop</div>
+<div class="status active">ACTIVE</div>
+
+<div class="flow">Trigger: User Interaction</div>
+<div class="flow">AI Step: Model Update</div>
+<div class="flow">Action: Retrain Weights</div>
+
+<button onclick="run(this)">Run Workflow</button>
+<div class="run"></div>
+</div>
+
+<!-- WORKFLOW 4 -->
+<div class="card">
+<div class="title">🔔 Smart Notification System</div>
+<div class="status idle">IDLE</div>
+
+<div class="flow">Trigger: System Event</div>
+<div class="flow">AI Step: Priority Ranking</div>
+<div class="flow">Action: Send Alert</div>
+
+<button onclick="run(this)">Run Workflow</button>
+<div class="run"></div>
+</div>
+
+</div>
+
+<script>
+
+function run(btn){
+let box = btn.nextElementSibling;
+
+box.innerHTML = "⚡ Running automation...";
+
+setTimeout(()=>{
+box.innerHTML = "🧠 AI processing data...";
+},800);
+
+setTimeout(()=>{
+box.innerHTML = "🔄 Executing workflow steps...";
+},1600);
+
+setTimeout(()=>{
+box.innerHTML = "✅ Automation completed successfully";
+},2500);
+}
+
+</script>
+
+</body>
+</html>

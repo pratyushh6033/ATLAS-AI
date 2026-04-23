@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Overview - Atlas AI</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#000;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.header h2{
+  color:#00f2fe;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:#00f2fe;
+}
+
+/* BIG METRICS */
+.big{
+  font-size:30px;
+  color:#00ff88;
+}
+
+/* STATUS DOT */
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:6px;
+}
+
+.green{background:#00ff88;}
+.yellow{background:#ffcc00;}
+.red{background:#ff0033;}
+
+/* AI THINK BOX */
+.think{
+  background:#0b0b0b;
+  padding:10px;
+  border-radius:8px;
+  font-family:monospace;
+  font-size:12px;
+  height:120px;
+  overflow:auto;
+}
+
+/* RADAR BAR */
+.bar{
+  height:10px;
+  background:#222;
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#00f2fe,#00ff88);
+}
+
+/* LIVE FEED */
+.feed p{
+  font-size:12px;
+  opacity:0.8;
+  margin:6px 0;
+}
+
+/* ALERT */
+.alert{
+  background:#1a0f0f;
+  border:1px solid #ff0033;
+  padding:10px;
+  border-radius:8px;
+  margin:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h2>🧠 Atlas AI Mission Control Overview</h2>
+<span>LIVE SYSTEM STATUS</span>
+</div>
+
+<div class="alert">
+⚠ System anomaly probability increased by 2.3% in neural cluster B-7
+</div>
+
+<!-- METRICS -->
+<div class="grid">
+
+<div class="card">
+<h3>📊 Total Requests</h3>
+<div class="big">1.2M</div>
+<p>Processed today</p>
+</div>
+
+<div class="card">
+<h3>🧠 AI Confidence</h3>
+<div class="big">97.4%</div>
+<p>Model stability score</p>
+</div>
+
+<div class="card">
+<h3>⚡ System Load</h3>
+<div class="big">62%</div>
+<div class="bar"><div class="fill" style="width:62%"></div></div>
+</div>
+
+<div class="card">
+<h3>🌍 Active Nodes</h3>
+<div class="big">143</div>
+<p>Global AI clusters</p>
+</div>
+
+</div>
+
+<!-- CORE INTELLIGENCE -->
+<div class="grid">
+
+<div class="card">
+<h3>🧠 AI Thought Stream</h3>
+<div class="think" id="think">
+[AI] analyzing global dataset...<br>
+[AI] detecting behavioral patterns...<br>
+[AI] optimizing neural weights...<br>
+[AI] prediction model stabilizing...
+</div>
+</div>
+
+<div class="card">
+<h3>📡 Live Activity Feed</h3>
+<div class="feed">
+<p><span class="dot green"></span>User query processed</p>
+<p><span class="dot yellow"></span>High load detected in API cluster</p>
+<p><span class="dot green"></span>Model retraining completed</p>
+<p><span class="dot red"></span>Latency spike resolved</p>
+</div>
+</div>
+
+<div class="card">
+<h3>⚠ Risk Radar</h3>
+<p>Security Level: LOW</p>
+<div class="bar"><div class="fill" style="width:20%"></div></div>
+<p style="font-size:12px;opacity:0.7;">No critical threats detected</p>
+</div>
+
+<div class="card">
+<h3>🚀 Prediction Engine</h3>
+<p>Next 1 hour traffic forecast:</p>
+<p>📈 +18% usage expected</p>
+<p>📉 latency stable</p>
+<p>🧠 AI recommendation: scale GPU cluster</p>
+</div>
+
+</div>
+
+<script>
+
+// fake AI thinking stream
+setInterval(() => {
+let box = document.getElementById("think");
+
+let msgs = [
+"[AI] refining prediction model...",
+"[AI] scanning global API usage...",
+"[AI] recalibrating neural weights...",
+"[AI] optimizing response latency...",
+"[AI] simulating future traffic..."
+];
+
+let msg = msgs[Math.floor(Math.random()*msgs.length)];
+
+box.innerHTML = msg + "<br>" + box.innerHTML;
+
+}, 2500);
+
+</script>
+
+</body>
+</html>
